@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">  
+</head>
+<body>
+    <div class="date">
+        <h1><%=setHeader.day %>, <%=setHeader.date %>  <%=setHeader.Month %> <%=setHeader.year %></h1>
+        <p><%=setHeader.listName %> </p>
+    </div>
+    <div class="todo-list">
+        <ul>
+            <li><form class="todo-form" action="/" method="post">
+                <input type="text"  placeholder="to do . . . " name="todo">
+                <button type="submit" name="submit" value=<%=setHeader.listName%> >Add</button>
+                </form>
+            </li>
+            
+            <% todos.forEach(t=>{%>
+                <form action="/delete" method="post">
+                    <li>
+                        <input type="checkbox" name="checkbox" value="<%=t._id%>" id="" onChange="this.form.submit()">
+                        <%=t.name%>
+                    </li>
+                    <input type="hidden" name="listName" value="<%=setHeader.listName%>"  id=""></input>
+                </form>     
+            <%})%> 
+        </ul>
+    </div>
+</body>
+</html>
