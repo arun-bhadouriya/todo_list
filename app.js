@@ -79,7 +79,7 @@ app.post("/",(req,res)=>{
         }
         res.redirect("/");
     }else{
-        List.findOne({name:req.body.submit.toLowercase()},(err,result)=>{
+        List.findOne({name:req.body.submit.toLowerCase()},(err,result)=>{
             if(err){
                 console.log(err);
             }
@@ -89,7 +89,7 @@ app.post("/",(req,res)=>{
                 result.save();
             }
             // console.log(result)
-            res.redirect("/"+req.body.submit.toLowercase())
+            res.redirect("/"+req.body.submit.toLowerCsase())
         })
     }
 })
