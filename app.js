@@ -89,7 +89,7 @@ app.post("/",(req,res)=>{
                 result.save();
             }
             // console.log(result)
-            res.redirect("/"+req.body.submit.toLowerCsase())
+            res.redirect("/"+req.body.submit.toLowerCase())
         })
     }
 })
