@@ -136,6 +136,6 @@ app.get("/:custom",(req,res)=>{
 
 // app.post("/")
 
-app.listen(3000,()=>{
+app.listen(process.env.PORT||3000,()=>{
     console.log("logged at : http://localhost:3000");
 })
