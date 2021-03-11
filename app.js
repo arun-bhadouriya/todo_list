@@ -115,7 +115,7 @@ app.post("/delete", (req,res)=>{
 
 
 app.get("/:custom",(req,res)=>{
-    setHeader.listName = `${req.params.custom.toUpperCase()}`
+    setHeader.listName = `${req.params.custom}`
     const list =new List({
         name: req.params.custom.toLowerCase(),
         items: defaultItems
